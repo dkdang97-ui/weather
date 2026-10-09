@@ -1,13 +1,13 @@
-
+# Compare the rain volume between Seattle and Portland, Maine
 
 
 ## Project Overview
 
-This project explores the relationship between school-level academic performance (ACT/SAT scores) and various socioeconomic characteristics of the surrounding school districts (such as median household income, unemployment rates, adult educational attainment, and family structures). Additionally, it integrates data from the National Center for Education Statistics (NCES) to incorporate detailed institutional metadata.
+Seattle has a reputation as one of the rainiest cities in the U.S. I wanted to see if that holds up against Portland, ME (the furthest city on the East Coast). I compared five years of daily precipitation data from 2018 to 2022 for both cities
 ---
 
-- **Objective:** Clean, merge, and analyze socioeconomic data from Census tracts and NCES school records to evaluate factors impacting school academic performance.
-- **Domain:** Education / Socioeconomic Analytics
+- **Objective:** Produce a clean, tidy daily precipitation dataset for Seattle and Portland, Maine (2018–2022), then use it to compare how much and how often it rains in each city.
+- **Domain:** Weather / Climate
 - **Key Techniques:** Data cleaning and wrangling with pandas, missing-data detection, date-based imputation, and exploratory time-series plotting
 
 ---
@@ -15,25 +15,25 @@ This project explores the relationship between school-level academic performance
 ## Project Structure
 
 ```
-education/
-├── data/                            # Raw and processed datasets
-│   ├── EdGap_data.xlsx              # Primary dataset: ACT/SAT scores & socioeconomic data
-│   └── ccd_sch_029_1617_w_1a_11212017.csv  # Secondary dataset: NCES school directory info
-├── code/                            # Jupyter notebooks and Python scripts
-│   └── exploratory_analysis.ipynb   # Data loading, cleaning, and pair-plot EDA
-├── reports/                         # Generated summary reports and export figures
-├── requirements.txt                 # Python dependencies
-└── README.md                        # Project documentation
+├── data/
+│   ├── seattle_rain.csv                     # raw Seattle data
+│   ├── portland_Maine.csv                   # raw Portland data
+│   └── clean_seattle_portland_weather.csv   # cleaned data
+├── code/
+│   ├── Seattle_Weather_week 1.ipynb         # cleaning
+│   └── Seattle_Weather_week 2.ipynb         # analysis
+├── reports/
+├── requirements.txt
+└── README.md
+```
 
 ---
 
 ## Data
 
 - **Source:**
-      EdGap Data
-      - Coverage: 2016 academic data.
-      Source: National Center for Education Statistics (NCES) / Common Core of Data (CCD).
-      - Coverage: 2016–2017 Academic Year.
+      https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US230004/detail
+      https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US530018/detail
   
 - **Description:**
     **seattle_rain.csv**: The Seattle file comes from a single station and has 1,658 rows. It's missing 168 days entirely, and 22 more have no precipitation value.
@@ -42,7 +42,7 @@ education/
   
 - **License:** NOAA data is in the public domain.
 
---- TO UPDATE LATER
+---
 
 ## Analysis
 
